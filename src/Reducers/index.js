@@ -6,7 +6,7 @@ import { firestoreReducer } from "redux-firestore";
 
 export default combineReducers({
   auth: authReducer,
-  // todos:todos,
+  todos: todos,
   firestore: firestoreReducer,
   firebase: firebaseReducer
 });

@@ -19,10 +19,6 @@ class SignUp extends Component {
     e.preventDefault();
     this.props.signup(this.state);
   };
-  handleSignOut = () => {
-    console.log(this.state);
-    this.props.signup(this.state);
-  };
 
   render() {
     return (
@@ -31,7 +27,7 @@ class SignUp extends Component {
           <h3>{this.props.title}</h3>
         </div>
         <Container>
-          <Row style={{ justifyContent: "center", paddingTop: "6rem" }}>
+          <Row style={{ justifyContent: "center", paddingTop: "2.5rem" }}>
             <Card border="light" style={{ width: "25rem" }}>
               <Card.Header className="text-center">SignIn</Card.Header>
               <Card.Body>
@@ -77,60 +73,17 @@ class SignUp extends Component {
                     SignUp
                   </Button>
                 </Form>
+                <div>
+                  {" "}
+                  {this.props.autherror ? (
+                    <h6>{this.props.autherror}</h6>
+                  ) : null}
+                </div>
               </Card.Body>
-              <div>
-                {" "}
-                {this.props.authError ? <h2>{this.props.authError}</h2> : null}
-              </div>
             </Card>
           </Row>
         </Container>
       </div>
-      /* <Card>
-          <CardContent>
-            <form onSubmit={this.handleSubmit}>
-              <Input
-                placeholder={"Firstname"}
-                label={"Firstname"}
-                id={"Firstname"}
-                name={"Firstname"}
-                type={"text"}
-                onChange={this.handleChange}
-              />
-              <Input
-                placeholder={"Lastname"}
-                label={"Lastname"}
-                id={"Lastname"}
-                name={"Lastname"}
-                type={"text"}
-                onChange={this.handleChange}
-              />
-              <Input
-                placeholder={"Email"}
-                label={"Email Address"}
-                id={"email"}
-                name={"email"}
-                type={"text"}
-                onChange={this.handleChange}
-              />
-              <Input
-                placeholder={"password"}
-                label={"Password"}
-                id={"password"}
-                name={"password"}
-                type={"password"}
-                onChange={this.handleChange}
-              />
-              <Button type="submit" variant="contained" color="default">
-                SignUp
-              </Button>
-            </form>
-            <div>
-              {this.props.autherror ? <p>{this.props.autherror}</p> : null}
-            </div>
-          </CardContent>
-        </Card> */
-      // </div>
     );
   }
 }

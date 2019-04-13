@@ -6,8 +6,10 @@ import Button from "@material-ui/core/Button";
 function HomeLinks(props) {
   return (
     <div>
-      <Button>Home</Button>
-      <Button onClick={props.signout}>SignOut</Button>
+      <Button style={{ color: "white" }}>Home</Button>
+      <Button style={{ color: "white" }} onClick={props.signout}>
+        SignOut
+      </Button>
     </div>
   );
 }

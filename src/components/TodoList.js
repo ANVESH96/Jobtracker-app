@@ -1,7 +1,5 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-// import Todo from "./Todos"
-// import EditComponent from "../containers/EditTodo"
 import { displayFirebase, deleteTodo } from "../actions/actions";
 import _ from "lodash";
 
@@ -12,10 +10,10 @@ class TodoList extends Component {
 
   showposts() {
     return _.map(this.props.todos, (todo, id) => {
+      console.log(todo);
       return (
         <div>
           <div key={id}>{todo}</div>
-          {/* <div>{key}</div> */}
           <button
             onClick={() => {
               this.props.deleteTodo(id);
@@ -31,7 +29,7 @@ class TodoList extends Component {
   render() {
     return (
       <div>
-        <h4>ToodList</h4>
+        <h4>TodoList</h4>
         {this.showposts()}
         {/* {this.props.todos.map((todo) => 
                 // <div key={todo.todoid}>
